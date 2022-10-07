@@ -1,0 +1,533 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgba(70, 129, 137, 0.5), rgb(250,250,250), rgba(70, 129, 137, 0.5)); 
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#cabecera-principal{
+    height: 16vh;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: rgb(3, 25, 38);
+    border-bottom: 2px solid rgb(250, 250, 250);
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    height: 15vh;
+}
+
+.opciones{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+}
+
+.opcion{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    color: rgb(250, 250, 250);
+    position: relative;
+    margin: 5px;
+}
+
+.opcion-enlace, .opcion-enlace-oculto{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.opcion-enlace{
+    padding: 3vh;
+    font-size: 30px;
+}
+
+.opcion-enlace:after{
+    content: "";
+    width: 0;
+    height: 10px;
+    background-color: rgb(250, 250, 250);
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transition: all .5s;
+    will-change:width;
+}
+
+.opcion-enlace:hover:after{
+    width: 100%;
+    right: 0;
+}
+
+.opcion-enlace:hover{
+    color: rgb(250, 250, 250);
+    background-color: rgba(250, 250, 250, 0.2);
+    transition: all 1s;
+}
+
+#menu-oculto{
+    display: none;
+}
+
+.activo{
+    background-color: rgb(250, 250, 250 );
+    color: rgb(3, 25, 38);
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+
+
+.titulo{
+    color: rgb(250, 250, 250);
+    background-color: rgb(3, 25, 38);
+    width: 45%;
+    font-size: 50px;
+    text-align: center;
+    margin: 5vh 0 5vh 0;
+    border: 1px solid rgb(250, 250, 250);
+}
+
+.titulo--left{
+    margin-left: 5%;
+}
+
+.titulo--right{
+    margin-left: 50%;
+}
+
+.sub-titulo{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#contenido-principal{ 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#sobre-mi{
+    width: 100%;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#perfil{
+    display: flex;
+    justify-content: center;
+}
+
+#perfil-img{
+    border-radius: 50%;
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 35vh;
+}
+
+#informacion-personal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.informacion{
+    color: rgb(250, 250, 250);
+    background-color: rgb(3, 25, 38);
+    width: 40%;
+    margin: 3rem 3% 3% 3%;
+    border: 1px solid rgb(250, 250, 250);
+}
+
+.informacion ul{
+    list-style: none;
+    padding: 5% 30%;
+}
+
+#acerca-de-mi{
+    padding: 0 10%;
+    text-align: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#formacion-academica{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.instituto{
+    font-weight: bold;
+    font-size: 10vh;
+    margin: 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(3, 25, 38);
+    border-radius: 2.5rem;
+    height: 65vh;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0 5vh 0;
+}
+
+.instituto:hover{
+    background: rgba(3, 25, 38, 0.5);
+}
+
+.instituto, header{
+    text-align: center;
+}
+
+.instituto-img{
+    height: 40vh;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+.redes-sociales{
+    position: fixed;
+    top:30%;
+    left: 0;
+    background-color: rgba(3, 25, 38, 0.5);
+    margin: 0;
+}
+
+.redes{
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+.redes a{
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.icon-contacto{
+    color: rgb(250, 250, 250 );
+    margin: 0;
+    transition: .5s;
+    z-index: 3;    
+}
+
+.redes li a {
+    padding: 1rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.redes li a .icon {
+    position: relative;
+    color: #262626;
+    transition: .5s;
+    z-index: 3;
+}
+
+.redes li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+.redes li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    z-index: 2;
+}
+
+.redes li a:hover:before {
+    top: 0;
+}
+
+.redes li:nth-child(1) a:before{
+    background: black;
+}
+
+ul li:nth-child(2) a:before{
+    background: linear-gradient(135deg, #002296, #8200bf, #c0007a, #ea0c5f, #ff5341, #ff8820, #f6ba00);
+}
+
+ul li:nth-child(3) a:before{
+    background: #0077b5;
+}
+
+ul li:nth-child(4) a:before{
+    background: rgb(59, 89, 152);
+}
+
+ul li:nth-child(5) a:before{
+    background: rgb(0, 187, 45);
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#contacto-principal{
+    background-color: rgb(3, 25, 38);
+    color: rgb(250, 250, 250);
+    font-size: 10px;
+    text-align: center;
+}
+
+.enlace-contacto{
+    color: rgb(250, 250, 250);
+    font-size: 20px;
+    text-align: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#boton-inicio{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    background-color: rgba(3, 25, 38, 0.5);
+    border-radius: 50%;
+    border: 1px solid rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    width: 10vh;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vh; 
+
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 35px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+@media (max-width:1147px){
+    #menu{
+        height: 12.5vh;
+    }
+    .opcion-enlace{
+        font-size: 25px;
+        padding: 2vh;
+    }
+    #cabecera-principal{
+        height: 14vh;
+    }
+
+}
+
+@media (max-width:950px){
+    #menu{
+        height: 10vh;
+    }
+
+    .opcion-enlace{
+        padding: 1.5vh;
+    }
+
+    .opcion-enlace, .icon-home3{
+        font-size: 20px;
+        height: 2.5rem;
+    }
+
+    .icon-home3{
+        position: relative;
+        bottom: 1vh;
+    }
+
+    #titulo-principal{
+        font-size: 10vh;
+    }
+    
+    #nombre{
+        font-size: 3vh;
+    }
+    #cabecera-principal{
+        height: 12vh;
+    }
+}
+
+@media (max-width:750px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 15px;
+        padding: 1.5vh;
+    }
+}
+@media (max-width:610px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 13.5px;
+        padding: 1.5vh;
+    }
+}
+
+@media (max-width:570px){
+    #menu{
+        display: none;
+    }
+    #menu-oculto{
+        display: flex;
+        color: rgb(250, 250, 250);
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .barra-menu{
+        position: sticky;
+        background-color: rgb(3, 25, 38);
+        width: 100%;
+        height: 10vh;
+        border-bottom: 1px solid rgb(250, 250, 250);
+    }
+    #btn-menu{
+        display: none;
+    }
+    .icon-paragraph-center{
+        display: block;
+        display: flex;
+        justify-content: center;
+        width: 5vh;
+        height: 3.5vh;
+        background-color: rgb(3, 25, 38);
+        font-size: 25px;
+        margin: 3vh;
+        position: absolute;
+        top: 0;
+    }
+    .opciones-oculto{
+        margin: 0;
+        display: flex;
+        position:sticky;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(3, 25, 38);
+        visibility: hidden;
+        justify-content: flex-start;
+    }
+    #btn-menu:checked ~ .opciones-oculto{
+        visibility: visible;
+    }
+    .opcion-oculto{
+        padding: 1rem;
+        margin: 1rem;
+        border-left: 10px solid rgb(250, 250, 250);
+    }
+    .opcion-enlace-oculto{
+        font-size: 15px;
+        padding: 1.5vh;
+        border: unset;
+    }
+    .opcion-enlace-oculto:hover{
+        background-color: unset;
+        border: unset;
+    }
+    .opcion-oculto:hover{
+        background-color: rgba(250, 250, 250, 0.7);
+    }
+
+    #titulo-principal{
+        font-size: 5vh;
+    }
+    
+    #nombre{
+        font-size: 1vh;
+    }
+
+    #perfil-img{
+        height: 20vh;
+    }
+    .instituto{
+        width: 70%;
+        font-size: 25px;
+        margin: 2rem;
+        height: 55vh;
+    }
+}
+/*-----------------------------------------------------------------------------------------------------*/
+
+@media (max-width:800px){ 
+
+    .titulo{
+        font-size: 25px;
+    }
+
+    .seccion-contacto{
+        margin: 1rem 1rem 1rem 1rem;
+    }
+
+    .contacto{
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width:600px){ 
+    #informacion-personal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10%;
+    }
+    .informacion{
+        margin: 0 10% 0 10%;
+        width: 80%;
+    }
+}
+
+@media (max-width:590px){ 
+    .redes-sociales{
+        position:relative;
+    }
+    
+    .redes{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .instituto{
+        height: 30vh;
+        width: 20vh;
+        border-radius: 15%;
+    }
+
+    .instituto-img{
+        height: 15vh;
+    }
+}
