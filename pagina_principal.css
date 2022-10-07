@@ -4,16 +4,19 @@
 
 body{
     margin: 0;
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+#principal{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url("/IMG/fondo-principal.png");
+    background-image: url("/IMG/fondo-principal.webp");
     background-size: cover;
     background-position: center;
     background-repeat : no-repeat;
 }
-
-/*-----------------------------------------------------------------------------------------------------*/
 
 #menu{
     display: flex;
@@ -97,35 +100,6 @@ li{
     font-size: 2.5vh;
     display: flex;
     justify-content: center;
-}
-
-/*-----------------------------------------------------------------------------------------------------*/
-
-#contacto-principal{
-    background-color: rgb(3, 25, 38);
-    height: 15vh;
-    flex-shrink: 1;
-}
-
-#boton-inicio{
-    background-color: rgba(3, 25, 38, 0.5);
-    height: 10vh;
-    width: 10vh;
-    position: fixed;
-    bottom: 10vh;
-    right: 10vh;
-}
-
-#contacto-principal{
-    color: rgb(250, 250, 250);
-    font-size: 10px;
-    text-align: center;
-}
-
-.enlace-contacto{
-    color: rgb(250, 250, 250);
-    font-size: 20px;
-    text-align: center;
 }
 
 /*-----------------------------------------------------------------------------------------------------*/
