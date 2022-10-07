@@ -6,21 +6,22 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(90deg, rgba(70, 129, 137, 0.5), rgb(250,250,250), rgba(70, 129, 137, 0.5));  
 }
 
 /*-----------------------------------------------------------------------------------------------------*/
 
 #cabecera-principal{
-    height: 16vh;
+    height: 15vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: rgb(3, 25, 38);
 }
 
 #menu{
     display: flex;
     justify-content: center;
-    height: 15vh;
 }
 
 .opciones{
@@ -35,20 +36,39 @@ body{
     justify-content: center;
     list-style: none;
     color: rgb(250, 250, 250);
+    position: relative;
+    margin: 5px;
 }
 
 .opcion-enlace{
     text-decoration: none;
     color: rgb(250, 250, 250);
-    padding: 3vh;
+    padding: 1.5vh;
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
-    border-top: 10px solid rgba(255, 250, 250, 0);
+}
+
+.opcion-enlace:after{
+    content: "";
+    width: 0;
+    height: 10px;
+    background-color: rgb(250, 250, 250);
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transition: all .5s;
+    will-change:width;
+}
+
+.opcion-enlace:hover:after{
+    width: 100%;
+    right: 0;
 }
 
 .opcion-enlace:hover{
-    border: 1px solid rgb(250, 250, 250);
-    background-color: rgba(3, 25, 38, 0.7);
+    color: rgb(250, 250, 250);
+    background-color: rgba(250, 250, 250, 0.2);
+    transition: all 1s;
 }
 
 li{
@@ -58,10 +78,6 @@ li{
 #menu-oculto{
     display: none;
 }
-
-/*-----------------------------------------------------------------------------------------------------*/
-
-
 /*-----------------------------------------------------------------------------------------------------*/
 
 .titulo{
@@ -86,58 +102,8 @@ li{
 /*-----------------------------------------------------------------------------------------------------*/
 
 #contenido-principal{
-    background: linear-gradient(90deg, rgba(70, 129, 137, 0.5), rgb(250,250,250), rgba(70, 129, 137, 0.5));  
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 100vh;
-}
 
-#mis-conocimientos{
-    width: 100%;
-
-}
-
-.sub-titulo{
-    color: rgb(3, 25, 38);
-    text-decoration: underline ;
-    font-size: 40px;
-    text-align: center;
-    padding: 1rem;
-}
-
-#herramientas{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1.5rem 0 5rem 0;
-}
-
-.lenguaje{
-    font-weight: bold;
-    color: rgb(3, 25, 38);
-    font-size: 10vh;
-    margin: 1rem;
-    height: 25vh;
-    width: 25vh;
-    display: flex;
-    justify-content:center;
-    padding: 7.5vh 0 7.5vh 0;
-}
-
-.lenguaje:hover{
-    background-color: rgb(3, 25, 38);
-    color: rgb(250, 250, 250);
-    border-radius: 50%;
-}
-
-#contacto-principal{
-    background-color: rgb(3, 25, 38);
-    height: 15vh;
-    flex-shrink: 1;
-}
-
-a{
-    text-decoration: none;
 }
 
 /*-----------------------------------------------------------------------------------------------------*/
@@ -152,6 +118,11 @@ a{
 }
 
 #contacto-principal{
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(3, 25, 38);
+    width: 100%;
+    height: 15vh;
     color: rgb(250, 250, 250);
     font-size: 10px;
     text-align: center;
@@ -163,9 +134,48 @@ a{
     text-align: center;
 }
 
+/*-----------------------------------------------------------------------------------------------------*/s
+
+a{
+    text-decoration: none;
+}
+
+#boton-inicio{
+    text-decoration: none;
+    color: rgb(250, 250, 250);
+    background-color: rgba(3, 25, 38, 0.5);
+    border-radius: 50%;
+    border: 1px solid rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    width: 10vh;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vh; 
+
+}
+
+.icon{
+    color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.activo{
+    background-color: rgb(250, 250, 250 );
+    color: rgb(3, 25, 38);
+}
+
+.activo .opcion-enlace-oculto{
+    color: rgb(3, 25, 38);
+}
+
 /*-----------------------------------------------------------------------------------------------------*/
 
-@media (max-width:1100px){
+@media (max-width:1147px){
     #menu{
         height: 12.5vh;
     }
@@ -183,9 +193,19 @@ a{
     #menu{
         height: 10vh;
     }
+
     .opcion-enlace{
-        font-size: 20px;
         padding: 1.5vh;
+    }
+
+    .opcion-enlace, .icon-home3{
+        font-size: 20px;
+        height: 2.5rem;
+    }
+
+    .icon-home3{
+        position: relative;
+        bottom: 1vh;
     }
 
     #titulo-principal{
@@ -207,10 +227,23 @@ a{
     .opcion-enlace{
         font-size: 15px;
         padding: 1.5vh;
+        
+    }
+    .titulo{
+        font-size: 25px;
+    }
+}
+@media (max-width:610px){
+    #menu{
+        height: 10vh;
+    }
+    .opcion-enlace{
+        font-size: 13.5px;
+        padding: 1.5vh;
     }
 }
 
-@media (max-width:550px){
+@media (max-width:570px){
     #menu{
         display: none;
     }
@@ -229,9 +262,7 @@ a{
         background-color: rgb(3, 25, 38);
         width: 100%;
         height: 10vh;
-        margin: 1vh;
         border-bottom: 1px solid rgb(250, 250, 250);
-
     }
     #btn-menu{
         display: none;
@@ -249,20 +280,26 @@ a{
         top: 0;
     }
     .opciones-oculto{
+        z-index: 1;
         margin: 0;
         display: flex;
-        position:sticky;
+        position:fixed;
+        top: 10vh;
+        border-top: 1px solid rgb(250, 250, 250);
         flex-direction: column;
-        width: 30vh;
+        width: 100%;
+        height: 100vh;
         background-color: rgb(3, 25, 38);
         visibility: hidden;
+        justify-content: flex-start;
     }
     #btn-menu:checked ~ .opciones-oculto{
         visibility: visible;
     }
     .opcion-oculto{
-        padding: 0 1rem 0 1rem;
-        border-bottom: 1px solid rgb(250, 250, 250);
+        padding: 1rem;
+        margin: 1rem;
+        border-left: 10px solid rgb(250, 250, 250);
     }
     .opcion-enlace-oculto{
         font-size: 15px;
@@ -276,45 +313,71 @@ a{
     .opcion-oculto:hover{
         background-color: rgba(250, 250, 250, 0.7);
     }
+}
+/*-----------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------*/
 
-    #titulo-principal{
-        font-size: 5vh;
-    }
-    
-    #nombre{
-        font-size: 1vh;
-    }
+
+#mis-conocimientos{
+    width: 100%;
+}
+
+.sub-titulo{
+    font-size: 40px;
+    text-decoration: underline ;
+    text-align: center;
+}
+
+#herramientas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.5rem 0 10rem 0;
+    background-color: rgba(3, 25, 38, 0.5);
+}
+
+.lenguaje{
+    font-weight: bold;
+    color: rgb(250, 250, 250);
+    font-size: 10vh;
+    margin: 0;
+    height: 25vh;
+    width: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    text-align: center;
+    position: relative;
+}
+
+.icon-lenguaje{
+    font-size: 10vh;
+}
+
+
+.lenguaje:hover{
+    background-color: rgb(3, 25, 38);
+    color: rgb(250, 250, 250);
+    transition: 0.9s;
+    transform: rotateX(380deg);
+}
+
+a{
+    text-decoration: none;
 }
 
 /*-----------------------------------------------------------------------------------------------------*/
 
-@media (max-width:800px){
-
-    .titulo{
-        font-size: 20px;
+@media (max-width:570px){
+    .icon-lenguaje{
+        font-size: 5vh;
     }
-
-    .sub-titulo{
-        font-size: 30px;
-    }
-
     .lenguaje{
-        font-size: 50px;
-        width: 25%;
-        height: 30%;
-        padding: 0;
-        border-radius: 25%;
-    }
-    .lenguaje-img{
-        height: 5vh;
-    }
-
-    #boton-inicio{
-        background-color: rgba(3, 25, 38, 0.5);
-        height: 5vh;
-        width: 5vh;
-        position: fixed;
-        bottom: 10vh;
-        right: 5vh;
+        font-size: 5vh;
+        width: 10vh;
+        height: 10vh;
+        margin: 1rem;
     }
 }
