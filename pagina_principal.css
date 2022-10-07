@@ -7,7 +7,7 @@ body{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url("/IMG/fondo-principal.webp");
+    background-image: url("/IMG/fondo-principal.png");
     background-size: cover;
     background-position: center;
     background-repeat : no-repeat;
